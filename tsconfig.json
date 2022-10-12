@@ -15,9 +15,10 @@
     "jsx": "preserve",
     "incremental": true,
     "noUncheckedIndexedAccess": true,
-    "baseUrl": ".",
+    "baseUrl": "./src",
     "paths": {
-      "pb": ["/public"]
+      "components": ["/components"],
+      "utils": ["/utils"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.cjs", "**/*.mjs"],

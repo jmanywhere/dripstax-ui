@@ -7,5 +7,6 @@
   html{
     background-color: rgb(12,34,46);
     color: white;
+    font-family: Poppins, system-ui, sans-serif;
   }
 }
