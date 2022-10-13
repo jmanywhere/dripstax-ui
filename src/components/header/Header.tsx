@@ -3,8 +3,17 @@ import Link from "next/link";
 import Image from "next/image";
 // Components
 import NavLink from "components/header/NavLink";
+import { useSetAtom } from "jotai";
+import { connectWallet } from "state/atoms";
+import { useWeb3React } from "@web3-react/core";
+import { useAuth, useEagerConnect } from "hooks/useAuth";
 
 const Header: FC<Record<string, string>> = () => {
+  const setOpenWallet = useSetAtom(connectWallet);
+  useEagerConnect();
+  const { logout } = useAuth();
+  const { account } = useWeb3React();
+
   return (
     <header className="px-8 py-4 flex flex-row fixed w-screen items-center justify-center">
       <div className="flex-1">
@@ -79,8 +88,15 @@ const Header: FC<Record<string, string>> = () => {
       </nav>
       <div className="flex-1 flex flex-col justify-end items-end">
         <div className="pb-2">
-          <button className="border border-white px-8 py-2 text-lg font-bold rounded-xl hover:bg-gray-500/30">
-            CONNECT WALLET
+          <button
+            className="border border-white px-8 py-2 text-lg font-bold rounded-xl hover:bg-gray-500/30"
+            onClick={() => (!account ? setOpenWallet(true) : logout())}
+          >
+            {account
+              ? account.slice(0, 4) +
+                "..." +
+                account.slice(account.length - 4, account.length)
+              : "CONNECT WALLET"}
           </button>
         </div>
         <div className="flex items-center justify-end">

@@ -19,6 +19,7 @@
     "paths": {
       "components": ["/components"],
       "hooks": ["/hooks"],
+      "state": ["/state"],
       "utils": ["/utils"]
     }
   },
