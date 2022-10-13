@@ -1,0 +1,1 @@
+export const urlImg = (path: string) => `https://f004.backblazeb2.com/file/w3-assets/${path}`
