@@ -2,7 +2,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
-import { urlImg } from "utils/image";
 // API
 import { trpc } from "../utils/trpc";
 // Components
@@ -17,20 +16,28 @@ const Home: NextPage = () => {
         <meta name="description" content="A Defi Revolution" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="max-h-[260px] overflow-visible relative z-[-1] top-[-100px]">
+      <div className="max-h-full">
         <Image
           src="/logo/DRIPSTAX.svg"
-          height={500}
-          width={500}
+          height={230}
+          width={300}
           alt="color_logo"
         />
       </div>
-      <button className="rounded-full border-4 border-primary text-2xl px-14 py-4 font-light tracking-wider my-4 hover:bg-primary/25">
+      <button className="text-center rounded-full border-4 border-primary text-2xl px-14 py-4 font-light tracking-wider my-4 hover:bg-primary/25 min-w-[300px]">
         Video Tutorials
       </button>
-      <button className="rounded-full border-4 border-primary text-2xl px-14 py-4 font-light tracking-wider hover:bg-primary/25">
+      <button className="text-center rounded-full border-4 border-primary text-2xl px-14 py-4 font-light tracking-wider mb-4 hover:bg-primary/25 min-w-[300px]">
         Documentation
       </button>
+      <a
+        href="https://dripstax.com/Fiat/"
+        target="_blank"
+        rel="noreferrer"
+        className="text-center rounded-full border-4 border-primary text-2xl px-14 py-4 font-light tracking-wider hover:bg-primary/25 min-w-[300px]"
+      >
+        Buy with Card
+      </a>
     </>
   );
 };
