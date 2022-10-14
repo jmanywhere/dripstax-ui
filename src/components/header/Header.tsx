@@ -28,7 +28,7 @@ const Header: FC<Record<string, string>> = () => {
           </a>
         </Link>
       </div>
-      <nav className="flex items-center justify-center flex-1">
+      <nav className="items-center justify-center flex-1 hidden md:flex">
         <NavLink
           name="SWAP"
           href="/swap"
